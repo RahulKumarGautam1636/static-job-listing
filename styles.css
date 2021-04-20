@@ -7,7 +7,7 @@ body {
   background: hsl(180, 52%, 96%);
   font-family: "Spartan", sans-serif;
 }
-section {
+.outer_container {
   width: 100%;
   height: auto;
   padding-bottom: 5rem;
@@ -34,29 +34,32 @@ section {
   margin: auto;
   margin-top: 5rem;
 }
-.cards_container div {
+.image_container,
+.posts_container,
+.skills_container {
   height: 100%;
   display: flex;
 }
-#image_container {
+/* .cards_container div {border: 1px solid red;} */
+.image_container {
   width: 12%;
   min-width: 120px;
   justify-content: flex-end;
   align-items: center;
 }
-#posts_container {
+.posts_container {
   width: 44%;
   flex-direction: column;
   padding-left: 2rem;
   display: flex;
 }
-#posts_container div {
+.posts_container div {
   display: flex;
 }
-#post_dots {
+.post_dots {
   margin: 0 0.5rem 0 0.5rem;
 }
-#skills_container {
+.skills_container {
   width: 44%;
   align-items: center;
   justify-content: space-between;
@@ -74,8 +77,8 @@ section {
   font-weight: bold;
   color: hsl(180, 29%, 50%);
 }
-#new,
-#featured {
+.new,
+.featured {
   margin: 0;
   color: white;
   font-size: 0.7rem;
@@ -104,7 +107,7 @@ section {
   font-size: 1rem;
   color: hsl(180, 8%, 52%);
 }
-#new_container {
+.new_container {
   justify-content: center;
   align-items: center;
   height: 1.5rem;
@@ -114,7 +117,7 @@ section {
   margin-right: 1rem;
   padding-top: 0.3rem;
 }
-#feature_container {
+.feature_container {
   justify-content: center;
   align-items: center;
   height: 1.5rem;
@@ -142,7 +145,7 @@ button:hover {
   background: hsl(180, 29%, 50%);
   color: white;
 }
-#line {
+.line {
   height: 1.5rem;
   margin-bottom: 5px;
   width: 100%;
@@ -177,7 +180,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-#deleteAll {
+.deleteAll {
   justify-content: flex-end;
 }
 .filtered_tablets_container div {
@@ -233,28 +236,28 @@ button:hover {
     width: 85%;
     max-width: 380px;
   }
-  #image_container,
-  #posts_container,
-  #skills_container {
+  .image_container,
+  .posts_container,
+  .skills_container {
     width: 98%;
     justify-content: flex-start;
   }
-  #image_container {
+  .image_container {
     height: 30%;
   }
-  #skills_container {
+  .skills_container {
     padding: 0 0 1.1rem 0;
   }
-  #logo_image {
+  .logo_image {
     height: 4rem;
     margin-top: -2.5rem;
   }
-  #posts_container {
+  .posts_container {
     padding: 0;
     height: 85%;
   }
-  #feature_container,
-  #new_container {
+  /* .feature_container, */
+  .new_container {
     padding-top: 0.2rem;
   }
   .top {
@@ -265,8 +268,9 @@ button:hover {
   }
   .bottom {
     align-items: center;
+    width: 110%;
   }
-  #line {
+  .line {
     display: inline;
   }
   .attr {
