@@ -13,23 +13,23 @@ function Card(props) {
             : "none"
       }}
     >
-      <div id="image_container">
-        <img id="logo_image" src={props.logo} alt="photosnap" />
+      <div className="image_container">
+        <img className="logo_image" src={props.logo} alt="photosnap" />
       </div>
-      <div id="posts_container">
+      <div className="posts_container">
         <div className="top">
           <p className="company_name_style">{props.company}</p>
           <div
             style={{ display: props.new ? "flex" : "none" }}
-            id="new_container"
+            className="new_container"
           >
-            <p id="new">NEW!</p>
+            <p className="new">NEW!</p>
           </div>
           <div
             style={{ display: props.featured ? "flex" : "none" }}
-            id="feature_container"
+            className="feature_container"
           >
-            <p id="featured" onClick={props.renderL}>
+            <p className="featured" onClick={props.renderL}>
               FEATURED
             </p>
           </div>
@@ -38,15 +38,15 @@ function Card(props) {
           <p onClick={props.show}>{props.position}</p>
         </div>
         <div className="bottom">
-          <p id="post_detail">{props.postedAt}</p>
-          <p id="post_dots">▪</p>
+          <p>{props.postedAt}</p>
+          <p className="post_dots">▪</p>
           <p>{props.contract}</p>
-          <p id="post_dots">▪</p>
+          <p className="post_dots">▪</p>
           <p>{props.location}</p>
         </div>
       </div>
-      <div id="line"></div>
-      <div id="skills_container">
+      <div className="line"></div>
+      <div className="skills_container">
         <button
           onClick={() => {
             props.addItem(props.role);
@@ -147,19 +147,19 @@ function Cards() {
                   }}
                   className="cross_svg_container"
                 >
-                  <img id="cross" src="./images/icon-remove.svg" alt="cross" />
+                  <img className="cross" src="./images/icon-remove.svg" alt="cross" />
                 </div>
               </div>
             );
           })}
         </div>
-        <div id="deleteAll" className="filterBar_inner_containers">
+        <div className="deleteAll" className="filterBar_inner_containers">
           <div className="filtered_tablets_container">
             <div className="skill">
               <p className="company_name_style filter_item_style">Clear all</p>
             </div>
             <div onClick={deleteAll} className="cross_svg_container">
-              <img id="cross" src="./images/icon-remove.svg" alt="cross" />
+              <img className="cross" src="./images/icon-remove.svg" alt="cross" />
             </div>
           </div>
         </div>
