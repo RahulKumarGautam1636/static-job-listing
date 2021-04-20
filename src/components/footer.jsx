@@ -1,4 +1,4 @@
-function Owner(props) {
+function Owner() {
     return (
       <div className="attribution">
        <p className="company_name_style attr">Challenge by- <a className="attr" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>

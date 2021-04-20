@@ -10,7 +10,7 @@ body {
 .outer_container {
   width: 100%;
   height: auto;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 .header {
   width: 100%;
@@ -40,7 +40,6 @@ body {
   height: 100%;
   display: flex;
 }
-/* .cards_container div {border: 1px solid red;} */
 .image_container {
   width: 12%;
   min-width: 120px;
@@ -81,7 +80,8 @@ body {
 .featured {
   margin: 0;
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.66rem;
+  font-weight: bold;
 }
 .middle {
   height: 33.33%;
@@ -110,7 +110,7 @@ body {
 .new_container {
   justify-content: center;
   align-items: center;
-  height: 1.5rem;
+  height: 1.4rem;
   width: 3rem;
   background: hsl(180, 29%, 50%);
   border-radius: 15px;
@@ -120,7 +120,7 @@ body {
 .feature_container {
   justify-content: center;
   align-items: center;
-  height: 1.5rem;
+  height: 1.4rem;
   width: 5rem;
   background: hsl(180, 14%, 20%);
   border-radius: 15px;
@@ -219,6 +219,10 @@ button:hover {
   html {
     font-size: 70%;
   }
+  .feature_container,
+  .new_container {
+    padding-top: 0.2rem;
+  }
 }
 @media only screen and (max-width: 750px) {
   html {
@@ -246,7 +250,7 @@ button:hover {
     height: 30%;
   }
   .skills_container {
-    padding: 0 0 1.1rem 0;
+    padding: 0 0 1.2rem 0;
   }
   .logo_image {
     height: 4rem;
@@ -256,7 +260,7 @@ button:hover {
     padding: 0;
     height: 85%;
   }
-  /* .feature_container, */
+  .feature_container,
   .new_container {
     padding-top: 0.2rem;
   }

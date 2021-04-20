@@ -4,11 +4,11 @@ import Owner from "../components/footer.jsx";
 
 function OuterContainer() {
   return (
-    <section className="outer_container">
+    <div className="outer_container">
       <div className="header"></div>
       <Cards />
       <Owner />
-    </section>
+    </div>
   );
 }
 export default OuterContainer;
