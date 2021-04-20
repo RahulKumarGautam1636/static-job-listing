@@ -4,16 +4,31 @@ import people from "./data.jsx";
 // Every individual card's structure..
 function Card(props) {
   return (
-    <div className="cards_container">
-      <div id="image_container"><img onClick={props.clearList} id="logo_image" src={props.logo} alt="photosnap" />
+    <div
+      className="cards_container"
+      style={{
+        borderLeft:
+          props.new && props.featured
+            ? "0.3rem solid hsl(180, 29%, 50%)"
+            : "none"
+      }}
+    >
+      <div id="image_container">
+        <img id="logo_image" src={props.logo} alt="photosnap" />
       </div>
       <div id="posts_container">
         <div className="top">
-          <p>{props.company}</p>
-          <div style={{ display: props.new ? "flex" : "none" }} id="new_container" >
+          <p className="company_name_style">{props.company}</p>
+          <div
+            style={{ display: props.new ? "flex" : "none" }}
+            id="new_container"
+          >
             <p id="new">NEW!</p>
           </div>
-          <div style={{ display: props.featured ? "flex" : "none" }} id="feature_container" >
+          <div
+            style={{ display: props.featured ? "flex" : "none" }}
+            id="feature_container"
+          >
             <p id="featured" onClick={props.renderL}>
               FEATURED
             </p>
@@ -32,16 +47,42 @@ function Card(props) {
       </div>
       <div id="line"></div>
       <div id="skills_container">
-        <button onClick={() => { props.addItem(props.role);}} >{props.role}</button>
-        <button onClick={() => { props.addItem(props.level);}} >{props.level}</button>
+        <button
+          onClick={() => {
+            props.addItem(props.role);
+          }}
+        >
+          {props.role}
+        </button>
+        <button
+          onClick={() => {
+            props.addItem(props.level);
+          }}
+        >
+          {props.level}
+        </button>
         {props.languages.map((item, index) => {
           return (
-            <button key={index} onClick={() => {props.addItem(item);}} >{item}</button>
+            <button
+              key={index}
+              onClick={() => {
+                props.addItem(item);
+              }}
+            >
+              {item}
+            </button>
           );
         })}
         {props.tools.map((item, index) => {
           return (
-            <button key={index} onClick={() => {props.addItem(item);}} >{item}</button>
+            <button
+              key={index}
+              onClick={() => {
+                props.addItem(item);
+              }}
+            >
+              {item}
+            </button>
           );
         })}
       </div>
@@ -84,27 +125,44 @@ function Cards() {
     });
     return f;
   }
+  function deleteAll() {
+    setItem([]);
+  }
   return (
     <div>
       <div
-        style={{ display: findItem.length === 0 ? "none" : "flex" }} className="filterBar_container">
-        {findItem.map((item, index) => {
-          return (
-            <div key={index} className="filtered_tablets_container">
-              <div className="skill">
-                <p>{item}</p>
+        style={{ display: findItem.length === 0 ? "none" : "flex" }}
+        className="filterBar_container"
+      >
+        <div className="filterBar_inner_containers">
+          {findItem.map((item, index) => {
+            return (
+              <div key={index} className="filtered_tablets_container">
+                <div className="skill">
+                  <p className="company_name_style filter_item_style">{item}</p>
+                </div>
+                <div
+                  onClick={() => {
+                    dlanguages(item);
+                  }}
+                  className="cross_svg_container"
+                >
+                  <img id="cross" src="./images/icon-remove.svg" alt="cross" />
+                </div>
               </div>
-              <div
-                onClick={() => {
-                  dlanguages(item);
-                }}
-                className="cross_svg_container"
-              >
-                <img id="cross" src="./images/icon-remove.svg" alt="cross" />
-              </div>
+            );
+          })}
+        </div>
+        <div id="deleteAll" className="filterBar_inner_containers">
+          <div className="filtered_tablets_container">
+            <div className="skill">
+              <p className="company_name_style filter_item_style">Clear all</p>
             </div>
-          );
-        })}
+            <div onClick={deleteAll} className="cross_svg_container">
+              <img id="cross" src="./images/icon-remove.svg" alt="cross" />
+            </div>
+          </div>
+        </div>
       </div>
       <div className="cards_outer_container">
         {people.map((item, index) => {
@@ -113,7 +171,7 @@ function Cards() {
               key={index}
               style={{
                 // Display cards if search bar items are present in card..
-                display: filterItem(item) === true ? "flex" : "none"
+                display: filterItem(item) ? "flex" : "none"
               }}
             >
               <Card
