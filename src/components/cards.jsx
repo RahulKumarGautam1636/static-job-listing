@@ -153,7 +153,7 @@ function Cards() {
             );
           })}
         </div>
-        <div className="deleteAll" className="filterBar_inner_containers">
+        <div className="filterBar_inner_containers deleteAll">
           <div className="filtered_tablets_container">
             <div className="skill">
               <p className="company_name_style filter_item_style">Clear all</p>
