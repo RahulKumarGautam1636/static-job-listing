@@ -32,7 +32,7 @@ body {
   border-radius: 5px;
   display: flex;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 .image_container,
 .posts_container,
@@ -110,7 +110,7 @@ body {
 .new_container {
   justify-content: center;
   align-items: center;
-  height: 1.4rem;
+  height: 1.6rem;
   width: 3rem;
   background: hsl(180, 29%, 50%);
   border-radius: 15px;
@@ -120,7 +120,7 @@ body {
 .feature_container {
   justify-content: center;
   align-items: center;
-  height: 1.4rem;
+  height: 1.6rem;
   width: 5rem;
   background: hsl(180, 14%, 20%);
   border-radius: 15px;
